@@ -1,7 +1,13 @@
 "use strict"
 
 function formatMessage(message, maxLength) {
-    
+    let retMessage;
+    if (message.length <= maxLength) {
+        retMessage = message
+    } else {
+       retMessage = `${message.slice(0, maxLength)}...`
+    }
+    return retMessage
 }
 
 console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
